@@ -1,5 +1,7 @@
 # junit5-maven-test
 Experiments with starting tests with parameters. 
+
+For @Tag see official manual: https://junit.org/junit5/docs/current/user-guide/#running-tests-tag-expressions
 ----------------------------------------------------------------------------------------------------------------------------------
 This is a running of specific test class, except of marhed as @Tag("failed")
 $ mvn test -DexcludedGroups="failed" -Dtest=package_B/VerificationOfPackageBTest.java
