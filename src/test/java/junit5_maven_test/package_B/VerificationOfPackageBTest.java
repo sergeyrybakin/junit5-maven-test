@@ -1,6 +1,7 @@
 package junit5_maven_test.package_B;
 
 import junit5_maven_test.App;
+import junit5_maven_test.package_C.PackageC;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -12,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("Package_B: running...")
 public class VerificationOfPackageBTest
 {
-    @Tag("package_B")
     @DisplayName("Package_B: Test App.get()")
     @Test
     public void verificationAppTest()
@@ -20,12 +20,18 @@ public class VerificationOfPackageBTest
         assertEquals("Hello JUnit 5!", App.get());
     }
 
-    @Tag ("package_B")
     @Tag("failed")
     @DisplayName("Package_B: For verification Failed tests")
     @Test
     public void verificationOfFailedTestInPackage_B()
     {
         assertEquals(true, false);
+    }
+
+    @DisplayName("Package_B: Test PackageC.get()")
+    @Test
+    public void verificationOfPackageCTest()
+    {
+        assertEquals("Hello from Package_C!", PackageC.get());
     }
 }
